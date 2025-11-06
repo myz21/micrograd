@@ -1,12 +1,6 @@
 # micrograd (notebook)
 
-A compact, educational implementation of a tiny autograd engine implemented as a Jupyter Notebook.
-
-This repository contains a learning-oriented reimplementation of Andrej Karpathy's micrograd ideas, centered around a Micrograd.ipynb notebook that builds a small scalar-valued automatic differentiation engine (Value class), demonstrates forward computations, and performs reverse-mode backpropagation with graph visualization using Graphviz.
-
-## Contents
-
-- Micrograd.ipynb  - Jupyter notebook with the Value class implementation, examples, graph visualization, and experiments.
+This repository contains a learning-oriented reimplementation of Andrej Karpathy's micrograd ideas. I built a small scalar-valued automatic differentiation engine (Value class), demonstrated forward computations, and performed reverse-mode backpropagation with graph visualization using Graphviz. Lastly, I trained the MLP in 20 iteration.
 
 ## Features
 
@@ -25,17 +19,23 @@ This repository contains a learning-oriented reimplementation of Andrej Karpathy
 
 Install Python deps with pip:
 
+```bash
 pip install numpy matplotlib graphviz
+```
 
 On Debian/Ubuntu also install the system binary:
 
+```bash
 sudo apt-get install graphviz
+```
 
 ## Running
 
 Open the notebook in Jupyter or Colab:
 
+```bash
 jupyter notebook Micrograd.ipynb
+```
 
 or upload the notebook to Google Colab.
 
@@ -46,13 +46,3 @@ Work through the notebook cells to see how the Value class is built and how back
 - This notebook is intended for learning and may differ in small implementation details from karpathy/micrograd. It follows the same core ideas (scalar Value, reverse-mode autodiff, simple NN example).
 - One implementation detail to be aware of: most ops use incremental gradient accumulation (+=) in their _backward closures. The tanh implementation in the notebook assigns to self.grad rather than uses +=; if you reuse nodes feeding into tanh multiple times, you may want to change that to use += for correct accumulation semantics.
 
-## License
-
-This project is provided for educational purposes. Check karpathy/micrograd for its licensing if you plan to reuse code.
-
-## Contributing
-
-Feel free to open issues or PRs on the GitHub repository: https://github.com/myz21/micrograd
-
---
-Updated README by @myz21 (via Copilot assistant)
